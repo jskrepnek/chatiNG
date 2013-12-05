@@ -1,0 +1,56 @@
+﻿.messages 
+{   
+    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-left: 200px;
+}
+
+.message 
+{
+    border-style: solid;
+    border-width: 1px 0px 1px 0px;
+    border-color: lightgray;
+    background-color: azure;
+    padding: 10px;
+}
+
+.sayBox 
+{
+    width: 100%;
+    background-color: lightyellow;
+    position: fixed;
+    bottom: 0; 
+    height: 30px;
+    padding: 10px;
+    margin-left: 201px;
+}
+
+.sayInput {
+    width: 75%;
+}
+
+.header 
+{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 50px;
+    background-color: honeydew;
+}
+
+.rooms {
+    position: fixed;
+    top: 50px;
+    width: 200px;
+    background-color: blanchedalmond;
+    border-right: 1px;
+    border-top: 1px;
+    border-width: 1px;
+    border-style: solid;
+    height: 100%;   
+}
+
+input.name {
+    width: 150px;
+    margin-left: 10px;
+}

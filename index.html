@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="chatiNG">
+
+  <head>
+
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+    <script src="http://cdn.pubnub.com/pubnub.js"></script>
+    <script src="pub-nub.js"></script>
+    <script src="app.js"></script>
+    <script src="chatCtrl.js"></script>
+    <script src="guid.js"></script>
+    <script src="rooms.js"></script>
+    <script src="chat.js"></script>
+    
+  </head>
+
+    <body>
+        <div ng-controller="chatCtrl">
+          
+            <section class="header">
+                <h1 style="text-align:center">chatiNG</h1>              
+            </section>
+            
+            <section class="rooms">
+                <ul class="list-group">
+                    <li ng-repeat="room in rooms" class="list-group-item">
+                        <a href="#" ng-click="changeRoom(room)"><h4 class="list-group-item-heading">{{ room.name }}<span ng-show="room === activeRoom">*</span></h4></a>
+                    </li>
+                </ul>
+                <form role="form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input class="form-control name" id="name" ng-model="name" placeholder="Your Name"></input>                                   
+                    </div>
+                </form>
+                <form role="form" ng-submit="addRoom()">
+                    <div class="form-group">
+                        <button type="submit">Add Room</button>
+                    </div>
+                </form>
+            </section>
+          
+            <section class="messages">
+                <div id="{{ m.id }}" class="message" ng-repeat="m in activeRoom.messages">{{ m.name }}: {{ m.text }}</div>              
+            </section>
+          
+            <section class="sayBox">
+                <form ng-submit="say()" class="form-inline sayForm" role="form">
+                    <input class="sayInput" type="text" ng-model="toSay" autofocus=""/><button class="btn" type="submit">Send</button>
+                </form>              
+            </section>
+            
+        </div>
+                
+    </body>
+
+</html>
